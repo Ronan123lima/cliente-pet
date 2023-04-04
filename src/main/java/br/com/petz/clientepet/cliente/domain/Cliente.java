@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,18 +45,15 @@ public class Cliente {
 	private LocalDate dataHoraDoCadastro;
 	private LocalDate dataHoraDaUltimaAlteracao;
 
-	public Cliente(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String celular,
-			String telefone, Sexo sexo, @NotNull LocalDate dataNascimento, @CPF String cpf,
-			@NotNull Boolean aceitaTermos) {
-		this.nomeCompleto = nomeCompleto;
-		this.email = email;
-		this.celular = celular;
-		this.telefone = telefone;
-		this.sexo = sexo;
-		this.dataNascimento = dataNascimento;
-		this.cpf = cpf;
-		this.aceitaTermos = aceitaTermos;
-		this.dataHoraDoCadastro = LocalDate.now();
-	}
+	public Cliente(ClienteRequest clienteRequest) {
+		this.nomeCompleto = clienteRequest.getNomeCompleto();
+		this.email = clienteRequest.getCelular();
+		this.celular = clienteRequest.getCelular();
+		this.telefone = clienteRequest.getCelular();
+		this.sexo = clienteRequest.getSexo();
+		this.dataNascimento = clienteRequest.getDataNascimento();
+		this.cpf = clienteRequest.getCelular();
+		this.aceitaTermos = clienteRequest.getAceitaTermos();
+		this.dataHoraDoCadastro = LocalDate.now();	}
 
 }
