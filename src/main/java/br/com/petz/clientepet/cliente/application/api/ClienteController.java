@@ -1,5 +1,7 @@
 package br.com.petz.clientepet.cliente.application.api;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.petz.clientepet.cliente.application.service.ClienteService;
@@ -12,11 +14,11 @@ import lombok.extern.log4j.Log4j2;
 public class ClienteController implements ClienteApi {
 	private final ClienteService clienteService;
 	
-
-	public ClienteResponse postCliente(ClienteRequest clienteRequest) {
-		log.info("[inicia] ClienteController - postCliente");
-		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
-		log.info("[finaliza] ClienteController - postCliente");
-		return clienteCriado;
+		@Override
+		public ClienteResponse postCliente(@Valid ClienteRequest clienteRequest) {
+			log.info("[inicia] ClienteController - postCliente");
+			ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
+			log.info("[finaliza] ClienteController - postCliente");
+			return clienteCriado;
 	}
 }
