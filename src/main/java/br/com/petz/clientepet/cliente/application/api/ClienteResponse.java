@@ -11,9 +11,7 @@ public class ClienteResponse {
 	private UUID idCliente;
 
 	public static ClienteResponseBuilder builder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }

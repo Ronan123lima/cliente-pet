@@ -47,12 +47,12 @@ public class Cliente {
 
 	public Cliente(ClienteRequest clienteRequest) {
 		this.nomeCompleto = clienteRequest.getNomeCompleto();
-		this.email = clienteRequest.getCelular();
+		this.email = clienteRequest.getEmail();
 		this.celular = clienteRequest.getCelular();
-		this.telefone = clienteRequest.getCelular();
+		this.telefone = clienteRequest.getTelefone();
 		this.sexo = clienteRequest.getSexo();
 		this.dataNascimento = clienteRequest.getDataNascimento();
-		this.cpf = clienteRequest.getCelular();
+		this.cpf = clienteRequest.getCpf();
 		this.aceitaTermos = clienteRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDate.now();	}
 
