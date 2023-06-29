@@ -20,7 +20,7 @@ public class ClienteApplicationService implements ClienteService {
 
 	@Override
 	public ClienteResponse criaCliente(ClienteRequest clienteRequest) {
-		log.info("[inicia] ClienteApplicationService - criaCliente");		
+		log.info("[inicia] ClienteApplicationService - criaCliente");
 		Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
 		log.info("[finaliza] ClienteApplicationService - criaCliente");
 		return ClienteResponse.builder()
@@ -33,6 +33,7 @@ public class ClienteApplicationService implements ClienteService {
 		log.info("[inicia] ClienteApplicationService - buscaTodosClientes");
 		List<Cliente> clientes = clienteRepository.buscaTodosClientes();
 		log.info("[finaliza] ClienteApplicationService - buscaTodosClientes");		
+		log.info("[finaliza] ClienteApplicationService - buscaTodosClientes");
 		return ClienteListResponse.converte(clientes);
 	}
 }

@@ -9,4 +9,8 @@ import lombok.Value;
 @Builder
 public class ClienteResponse {
 	private UUID idCliente;
+
+	public static ClienteResponseBuilder builder() {
+		return null;
+	}
 }

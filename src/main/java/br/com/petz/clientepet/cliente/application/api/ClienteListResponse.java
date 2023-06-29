@@ -28,4 +28,5 @@ public class ClienteListResponse {
 		this.email = cliente.getEmail();
 		this.celular = cliente.getCelular();
 	}	
-}
+	}
+

@@ -32,6 +32,7 @@ public class Cliente {
 	private String nomeCompleto;
 	@NotBlank
 	@Email
+	@javax.validation.constraints.Email
 	private String email;
 	@NotBlank
 	private String celular;
@@ -46,6 +47,7 @@ public class Cliente {
 
 	private LocalDateTime DataHoraDoCadastro;
 	private LocalDateTime DataHoraDaUltimaAlteração;
+	
 
 	public Cliente(ClienteRequest clienteRequest) {
 		this.nomeCompleto = clienteRequest.getNomeCompleto();
@@ -57,5 +59,5 @@ public class Cliente {
 		this.cpf = clienteRequest.getCpf();
 		this.aceitaTermos = clienteRequest.getAceitaTermos();
 		this.DataHoraDoCadastro = LocalDateTime.now();
-	}
+}
 }
