@@ -1,8 +1,8 @@
 server:
- servlet:
+  servlet:
     context-path: /cliente-pet/api
     
-//springdoc: 
- // swagger-ui: 
-//    path: /public/swagger
+springdoc: 
+   swagger-ui: 
+    path: /public/swagger
  

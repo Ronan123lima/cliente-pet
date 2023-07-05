@@ -1,8 +1,5 @@
 package br.com.petz.clientepet.cliente.application.api;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.petz.clientepet.cliente.application.service.ClienteService;
@@ -23,16 +20,16 @@ public class ClienteController implements ClienteAPI {
 		return clienteCriado;
 	}
 
-	@Override
-	public List<ClienteListResponse> getTodosClientes() {
-		log.info("[inicia] ClienteController - getTodosClientes");
-		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
-		log.info("[finaliza] ClienteController - getTodosClientes");
-		return clientes;
-	}
+//	@Override
+//	public List<ClienteListResponse> getTodosClientes() {
+//		log.info("[inicia] ClienteController - getTodosClientes");
+//		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
+//		log.info("[finaliza] ClienteController - getTodosClientes");
+//		return clientes;
+//	}
 
 	@Override
-	public ClienteDetalhadoResponse getClientesAtravesId(UUID idCliente) {
+	public ClienteDetalhadoResponse getClientesAtravesId(idCliente) {
 		log.info("[inicia] ClienteController - getClientesAtravesId");
 		log.info("[idCliente] {}", idCliente);
 		ClienteDetalhadoResponse ClienteDetalhado = clienteService.buscaClienteAtravesId(idCliente);
@@ -40,5 +37,13 @@ public class ClienteController implements ClienteAPI {
 		return ClienteDetalhado;
 	}
 
-		}
+	@Override
+	public ClienteDetalhadoResponse getClientesAtravesCPF(String cpf) {
+		log.info("[inicia] ClienteController - getClientesAtravesId");
+		log.info("[cpf] {}", cpf);
+		ClienteDetalhadoResponse ClienteDetalhado = clienteService.buscaClienteAtravesId(cpf);
+		log.info("[finaliza] ClienteController - getClientesAtravesId");
+		return ClienteDetalhado;
+	}
 
+}

@@ -25,7 +25,12 @@ public interface ClienteAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<ClienteListResponse> getTodosClientes();
 	
-	@GetMapping(value = "/{idCliente}")
+//	@GetMapping(value = "/{idCliente}")
+//	@ResponseStatus(code = HttpStatus.OK)
+//	ClienteDetalhadoResponse getClientesAtravesId(@PathVariable UUID idCliente);
+
+	@GetMapping(value = "/{cpf}")
 	@ResponseStatus(code = HttpStatus.OK)
-	ClienteDetalhadoResponse getClientesAtravesId(@PathVariable UUID idCliente);  
+	ClienteDetalhadoResponse getClientesAtravesCPF(@PathVariable String cpf);  
+	
 }
