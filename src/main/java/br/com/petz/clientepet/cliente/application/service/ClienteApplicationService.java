@@ -39,10 +39,18 @@ public class ClienteApplicationService implements ClienteService {
 		return ClienteListResponse.converte(clientes);
 	}
 
+//	@Override
+//	public ClienteDetalhadoResponse buscaClienteAtravesCPF(String cpf) {
+//		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId");
+//		Cliente cliente = clienteRepository.buscaClienteAtravesId(cpf);
+//		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId");
+//		return new ClienteDetalhadoResponse(cliente); 
+//	}
+
 	@Override
-	public ClienteDetalhadoResponse buscaClienteAtravesId(String cpf) {
+	public ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente) {
 		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId");
-		Cliente cliente = clienteRepository.buscaClienteAtravesId(cpf);
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
 		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId");
 		return new ClienteDetalhadoResponse(cliente); 
 	}
