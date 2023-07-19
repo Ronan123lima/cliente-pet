@@ -40,13 +40,11 @@ public class ClienteController implements ClienteAPI {
 		return ClienteDetalhado;
 	}
 
-//	@Override
-//	public ClienteDetalhadoResponse getClientesAtravesCPF(String cpf) {
-//		log.info("[inicia] ClienteController - getClientesAtravesId");
-//		log.info("[cpf] {}", cpf);
-//		ClienteDetalhadoResponse ClienteDetalhado = clienteService.buscaClienteAtravesCPF(cpf);
-//		log.info("[finaliza] ClienteController - getClientesAtravesId");
-//		return ClienteDetalhado;
-//	}
+	@Override
+	public void deletaClientesAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteController - deletaClientesAtravesId");
+		log.info("[idCliente] {}", idCliente);
+		log.info("[finaliza] ClienteController - deletaClientesAtravesId");
 
+	}
 }
