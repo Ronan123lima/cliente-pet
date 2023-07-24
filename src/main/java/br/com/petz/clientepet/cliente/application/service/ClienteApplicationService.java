@@ -29,7 +29,6 @@ public class ClienteApplicationService implements ClienteService {
 				.idCliente(cliente.getIdCliente())
 				.build();
 	}
-
 	@Override
 	public List<ClienteListResponse> buscaTodosClientes() {
 		log.info("[inicia] ClienteApplicationService - buscaTodosClientes");
@@ -39,19 +38,21 @@ public class ClienteApplicationService implements ClienteService {
 		return ClienteListResponse.converte(clientes);
 	}
 
-//	@Override
-//	public ClienteDetalhadoResponse buscaClienteAtravesCPF(String cpf) {
-//		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId");
-//		Cliente cliente = clienteRepository.buscaClienteAtravesId(cpf);
-//		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId");
-//		return new ClienteDetalhadoResponse(cliente); 
-//	}
-
 	@Override
 	public ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente) {
 		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId");
 		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
 		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId");
 		return new ClienteDetalhadoResponse(cliente); 
+	}
+	
+	@Override
+	public void deletalienteAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteApplicationService - deletaClienteAtravesId");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+	//	clienteRepository.deletaCliente(cliente);
+		log.info("[finaliza] ClienteApplicationService - deletaClienteAtravesId");
+
+		
 	}
 }
