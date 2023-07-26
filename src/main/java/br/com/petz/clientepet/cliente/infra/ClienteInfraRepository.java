@@ -43,12 +43,11 @@ public class ClienteInfraRepository implements ClienteRepository {
 		return cliente;
 	}
 
-//	@Override
-//	public Cliente buscaClienteAtravesId(String cpf) {
-//		log.info("[inicia] ClienteInfraRepository - buscaClienteAtravesId");
-//		Cliente cliente = clienteSpringDataJPARepository.findByIdCpf(cpf)
-//				.orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
-//		log.info("[finaliza] ClienteInfraRepository - buscaClienteAtravesId");
-//		return cliente;
-//	}
+	@Override
+	public void deletaCliente(Cliente cliente) {
+		log.info("[inicia] ClienteInfraRepository - deletaCliente");
+		clienteSpringDataJPARepository.delete(cliente);
+		log.info("[finaliza] ClienteInfraRepository - deletaCliente");
+
+	}
 }
