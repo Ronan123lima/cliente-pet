@@ -14,8 +14,12 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-//@NoArgsConstructor(access = AccessLevel.PRIVATE)
-//@Getter
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
 @Entity
 public class Pet {
 	@Id
@@ -26,11 +30,14 @@ public class Pet {
 	private String nomePet;
 	@Enumerated(EnumType.STRING)
 	private Porte porte;
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoPet tipo;
 	private String microchip;
+	@NotBlank
 	private String raca;
 	@Enumerated(EnumType.STRING)
+	@NotNull
 	private SexoPet sexo;
 	private String pelagemCor;
 	@NotNull
@@ -40,5 +47,4 @@ public class Pet {
 
 	private LocalDateTime DataHoraDoCadastro;
 	private LocalDateTime DataHoraDaUltimaAlteração;
-
 }
